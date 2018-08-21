@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<!-- TIP: Use relative instead of linear layouts -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget31"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <TableRow
+        android:id="@+id/row"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tasklist"
+        android:orientation="horizontal" >
 
-</android.support.constraint.ConstraintLayout>
+        <EditText
+            android:id="@+id/etNewTask"
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btNewTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@+string/add_button_name" >
+        </Button>
+    </TableRow>
+
+    <ListView
+        android:id="@+id/tasklist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </ListView>
+
+</RelativeLayout>
